@@ -1,3 +1,11 @@
+import sys
+from pathlib import Path
+
+# Add project root to PYTHONPATH so it can be run directly via IDE or python src/main.py
+root_dir = Path(__file__).resolve().parent.parent
+if str(root_dir) not in sys.path:
+    sys.path.insert(0, str(root_dir))
+
 from src.recommender import load_songs, recommend_songs
 
 def main():
