@@ -1,111 +1,46 @@
 # 🎧 Model Card: Music Recommender Simulation
 
-## 1. Model Name  
+## 1. Model Name
 
-Give your model a short, descriptive name.  
-Example: **VibeFinder 1.0**  
+The Dark Vibe Matrix
 
----
+## 2. Goal / Task
 
-## 2. Intended Use  
+This recommender tries to suggest the top 5 songs that best match a user's specific musical "vibe" by comparing their personal tastes against the mathematical audio features of a music database.
 
-Describe what your recommender is designed to do and who it is for. 
+## 3. Data Used
 
-Prompts:  
+The dataset consists of a 45-song catalog built from three real-world, human-curated playlists. It uses features like `genre`, `mood`, `energy` (0.0-1.0), and `danceability` (0.0-1.0). Because the data is heavily curated from three specific listeners, it is limited in scope and lacks representation from massive global genres like Country, Classical, or Reggaeton.
 
-- What kind of recommendations does it generate  
-- What assumptions does it make about the user  
-- Is this for real users or classroom exploration  
+## 4. Algorithm Summary
 
----
+The system acts as a judge, scoring every song out of 5.0 possible points. It awards flat points if the song's text tags (genre and mood) exactly match what the user wants. Then, it calculates "similarity points" by finding the mathematical difference between the user's target energy/danceability and the song's actual audio levels. It sorts the final scores from highest to lowest to pick the top 5.
 
-## 3. How the Model Works  
+## 5. Observed Behavior / Biases
 
-Explain your scoring approach in simple language.  
+The initial logic exhibited a severe "filter bubble" bias. Because it awarded a massive +2.0 points for an exact genre match, it over-prioritized songs from the user's favorite genre. It completely ignored fantastic tracks from other genres that actually matched the user's exact energy and danceability preferences.
 
-Prompts:  
+## 6. Evaluation Process
 
-- What features of each song are used (genre, energy, mood, etc.)  
-- What user preferences are considered  
-- How does the model turn those into a score  
-- What changes did you make from the starter logic  
+I tested the system using three distinct user profiles: Rob (Indie Rock), Azalea (Alt Pop), and Onika (Dark Pop/Trap Metal). I then ran a "weight shift" experiment where I lowered the value of a genre match from +2.0 to +0.5. I observed how the recommendations changed when the system was forced to rely on raw audio math instead of text tags.
 
-Avoid code here. Pretend you are explaining the idea to a friend who does not program.
+## 7. Intended Use and Non-Intended Use
 
----
+**Intended Use:** For classroom exploration to understand how content-based filtering algorithms work, and to demonstrate how algorithmic weights create filter bubbles.
+**Non-Intended Use:** This should not be used for commercial deployment or as a production-ready music recommendation engine.
 
-## 4. Data  
+## 8. Ideas for Improvement
 
-Describe the dataset the model uses.  
-
-Prompts:  
-
-- How many songs are in the catalog  
-- What genres or moods are represented  
-- Did you add or remove data  
-- Are there parts of musical taste missing in the dataset  
+1. Allow users to input a list of multiple favorite genres instead of forcing them to pick just one.
+2. Add a "Group Session" feature that averages the preferences of multiple users to recommend songs they would all enjoy.
+3. Incorporate other available numerical data like `acousticness` to better distinguish the physical sound of the tracks.
 
 ---
 
-## 5. Strengths  
+## 9. Personal Reflection
 
-Where does your system seem to work well  
+My biggest learning moment during this project was realizing how easily a developer can accidentally trap a user in a "filter bubble." Just by assigning too many points to a text category like `genre`, the algorithm becomes blinded to other great matches.
 
-Prompts:  
+Using AI tools was incredibly helpful for quickly formatting my real-world playlists into clean CSV data and generating the Object-Oriented Python logic. However, I had to double-check the AI's math in the `score_song` function to ensure it was actually calculating the absolute differences in energy and danceability correctly based on my specific rules.
 
-- User types for which it gives reasonable results  
-- Any patterns you think your scoring captures correctly  
-- Cases where the recommendations matched your intuition  
-
----
-
-## 6. Limitations and Bias 
-
-Where the system struggles or behaves unfairly. 
-
-Prompts:  
-
-- Features it does not consider  
-- Genres or moods that are underrepresented  
-- Cases where the system overfits to one preference  
-- Ways the scoring might unintentionally favor some users  
-
----
-
-## 7. Evaluation  
-
-How you checked whether the recommender behaved as expected. 
-
-Prompts:  
-
-- Which user profiles you tested  
-- What you looked for in the recommendations  
-- What surprised you  
-- Any simple tests or comparisons you ran  
-
-No need for numeric metrics unless you created some.
-
----
-
-## 8. Future Work  
-
-Ideas for how you would improve the model next.  
-
-Prompts:  
-
-- Additional features or preferences  
-- Better ways to explain recommendations  
-- Improving diversity among the top results  
-- Handling more complex user tastes  
-
----
-
-## 9. Personal Reflection  
-
-A few sentences about your experience.  
-
-Prompts:  
-
-- What you learned about recommender systems  
-- Something unexpected or interesting you discovered  
-- How this changed the way you think about music recommendation apps  
+I was genuinely surprised by how a simple 5-point math system can actually "feel" like a smart recommendation. During my weight-shift experiment, the algorithm successfully realized that a dark pop song from Onika's playlist shared the exact same mathematical vibe as Azalea's alt-pop tastes and recommended it to her. If I were to extend this project, I would love to connect it to the actual Spotify API to pull real audio features for thousands of songs and see how the math holds up at scale!
