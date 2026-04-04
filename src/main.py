@@ -20,21 +20,27 @@ def main():
             "favorite_genre": "indie rock",
             "favorite_mood": "energetic",
             "target_energy": 0.80,
-            "target_danceability": 0.60
+            "target_danceability": 0.60,
+            "target_popularity": 45,  # Underground/Indie
+            "target_decade": 2000     # 2000s Nostalgia
         },
         {
             "name": "Azalea",
             "favorite_genre": "alt pop",
             "favorite_mood": "moody",
             "target_energy": 0.60,
-            "target_danceability": 0.55
+            "target_danceability": 0.55,
+            "target_popularity": 85,  # Mainstream hits
+            "target_decade": 2020     # Modern music
         },
         {
             "name": "Onika",
             "favorite_genre": "dark pop",
             "favorite_mood": "intense",
             "target_energy": 0.85,
-            "target_danceability": 0.65
+            "target_danceability": 0.65,
+            "target_popularity": 55,  # Obscure/Underground
+            "target_decade": 2020     # Modern edge
         }
     ]
 
