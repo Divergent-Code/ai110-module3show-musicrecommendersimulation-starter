@@ -1,4 +1,4 @@
-from recommender import load_songs, recommend_songs
+from src.recommender import load_songs, recommend_songs
 
 def main():
     # 1. Load the database
