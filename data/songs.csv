@@ -44,3 +44,23 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness,po
 43,Granite,Sleep Token,metal,intense,0.85,110,0.25,0.45,0.05,80,2020
 44,Bad Dream Break In,Alter Boy,indie pop,moody,0.55,100,0.30,0.60,0.20,45,2020
 45,HOT DEMON B!TCHES NEAR U ! ! !,CORPSE,trap metal,aggressive,0.92,120,0.30,0.75,0.05,85,2020
+46,greedy,Tate McRae,pop,moody,0.65,110,0.50,0.60,0.10,90,2020
+47,run for the hills,Tate McRae,alt pop,moody,0.58,115,0.40,0.55,0.20,88,2020
+48,Anti-Hero,Taylor Swift,pop,moody,0.62,97,0.50,0.60,0.15,95,2020
+49,Maroon,Taylor Swift,synthpop,moody,0.58,108,0.40,0.55,0.25,92,2020
+50,vampire,Olivia Rodrigo,alt pop,moody,0.65,138,0.45,0.50,0.30,95,2020
+51,bad idea right?,Olivia Rodrigo,pop rock,energetic,0.85,130,0.65,0.65,0.05,93,2020
+52,What Was I Made For?,Billie Eilish,alt pop,sad,0.30,80,0.20,0.40,0.90,96,2020
+53,Therefore I Am,Billie Eilish,alt pop,moody,0.60,94,0.50,0.65,0.20,89,2020
+54,bury a friend,Billie Eilish,alt pop,moody,0.55,120,0.30,0.50,0.35,87,2020
+55,E-GIRLS ARE RUINING MY LIFE!,CORPSE,trap metal,aggressive,0.90,100,0.40,0.60,0.05,75,2020
+56,Miss Me!,CORPSE,trap metal,intense,0.88,110,0.35,0.65,0.02,65,2020
+57,FU In My Head,Cloudy June,dark pop,intense,0.82,120,0.50,0.70,0.05,60,2020
+58,Nightmare,Halsey,dark pop,intense,0.85,140,0.45,0.60,0.05,80,2020
+59,Experiment On Me,Halsey,nu metal,intense,0.95,135,0.30,0.55,0.01,65,2020
+60,Take Me Out,Franz Ferdinand,indie rock,energetic,0.82,105,0.60,0.58,0.05,75,2000
+61,Do You Want To,Franz Ferdinand,indie rock,energetic,0.85,115,0.70,0.65,0.05,60,2000
+62,Tick Tick Tick,The Hives,garage rock,intense,0.88,140,0.50,0.45,0.02,50,2000
+63,Walk Idiot Walk,The Hives,garage rock,energetic,0.85,130,0.65,0.55,0.05,55,2000
+64,Heads Will Roll,Yeah Yeah Yeahs,indie rock,energetic,0.85,132,0.55,0.65,0.05,65,2000
+65,Zero,Yeah Yeah Yeahs,indie rock,energetic,0.80,125,0.60,0.60,0.05,50,2000
