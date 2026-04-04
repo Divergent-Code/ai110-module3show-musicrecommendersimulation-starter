@@ -42,10 +42,10 @@ def test_recommend_returns_songs_sorted_by_score():
         "target_decade": 2020
     }
     songs = make_small_songs_list()
+    # Using default mode
     results = recommend_songs(user, songs, k=2)
 
     assert len(results) == 2
-    # Starter expectation: the pop, happy, high energy song should score higher
     assert results[0]['song_data']["genre"] == "pop"
     assert results[0]['song_data']["mood"] == "happy"
     assert results[0]['score'] > results[1]['score']
@@ -61,8 +61,28 @@ def test_score_song_returns_score_and_reasons():
     }
     song = make_small_songs_list()[0]
 
+    # Tests default mode
     score, reasons = score_song(user, song)
     assert isinstance(score, float)
     assert isinstance(reasons, list)
     assert len(reasons) > 0
     assert "Genre match (+0.5)" in reasons
+
+def test_score_song_modes():
+    user = {
+        "favorite_genre": "pop",
+        "favorite_mood": "happy",
+        "target_energy": 0.8,
+        "target_danceability": 0.8,
+        "target_popularity": 80,
+        "target_decade": 2020
+    }
+    song = make_small_songs_list()[0]
+
+    # Test vibe_only mode (should not include genre in reasons)
+    score_vibe, reasons_vibe = score_song(user, song, mode="vibe_only")
+    assert "Genre match (+0.5)" not in reasons_vibe
+    
+    # Test genre_heavy mode (should have a massive +3.0 genre match)
+    score_heavy, reasons_heavy = score_song(user, song, mode="genre_heavy")
+    assert "Genre match (+3.0)" in reasons_heavy

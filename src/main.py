@@ -24,14 +24,15 @@ def main():
             "target_popularity": 45,  # Underground/Indie
             "target_decade": 2000     # 2000s Nostalgia
         },
+        # (Azalea and Onika's profiles kept in memory if you want to swap them in later!)
         {
             "name": "Azalea",
             "favorite_genre": "alt pop",
             "favorite_mood": "moody",
             "target_energy": 0.60,
             "target_danceability": 0.55,
-            "target_popularity": 85,  # Mainstream hits
-            "target_decade": 2020     # Modern music
+            "target_popularity": 85,
+            "target_decade": 2020
         },
         {
             "name": "Onika",
@@ -39,15 +40,23 @@ def main():
             "favorite_mood": "intense",
             "target_energy": 0.85,
             "target_danceability": 0.65,
-            "target_popularity": 55,  # Obscure/Underground
-            "target_decade": 2020     # Modern edge
+            "target_popularity": 55,
+            "target_decade": 2020
         }
     ]
 
-    # 3. Loop through each profile, calculate scores, and print the ranking
-    for user in profiles:
-        print(f"--- Top 5 Recommendations for {user['name']} ---")
-        top_songs = recommend_songs(user, songs, k=5)
+    # Grab just Rob's profile for the strategy experiment
+    rob = profiles[0]
+    
+    # Define the three modes we built
+    scoring_modes = ["default", "vibe_only", "genre_heavy"]
+
+    print(f"=== TESTING SCORING MODES FOR {rob['name'].upper()} ===\n")
+
+    # Loop through the modes instead of the users!
+    for mode in scoring_modes:
+        print(f"--- Mode: {mode.upper()} ---")
+        top_songs = recommend_songs(rob, songs, k=4, mode=mode) 
         
         for i, result in enumerate(top_songs, 1):
             song = result['song_data']
