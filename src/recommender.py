@@ -18,8 +18,8 @@ def score_song(user_prefs, song):
 
     # 1. Genre Match (+2.0 points)
     if song['genre'] == user_prefs['favorite_genre']:
-        score += 2.0
-        reasons.append("Genre match (+2.0)")
+        score += 0.5
+        reasons.append("Genre match (+0.5)")
 
     # 2. Mood Match (+1.0 point)
     if song['mood'] == user_prefs['favorite_mood']:
