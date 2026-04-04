@@ -45,18 +45,20 @@ def main():
         }
     ]
 
-    # Grab just Rob's profile for the strategy experiment
-    rob = profiles[0]
+    # Grab just Azalea's profile for the strategy experiment
+    azalea = profiles[1]
     
     # Define the three modes we built
     scoring_modes = ["default", "vibe_only", "genre_heavy"]
 
-    print(f"=== TESTING SCORING MODES FOR {rob['name'].upper()} ===\n")
+    print(f"=== TESTING SCORING MODES FOR {azalea['name'].upper()} ===\n")
 
-    # Loop through the modes instead of the users!
+    # Loop through the modes
     for mode in scoring_modes:
         print(f"--- Mode: {mode.upper()} ---")
-        top_songs = recommend_songs(rob, songs, k=4, mode=mode) 
+        
+        # Bumping k=5 to give it more room to hit a duplicate!
+        top_songs = recommend_songs(azalea, songs, k=5, mode=mode) 
         
         for i, result in enumerate(top_songs, 1):
             song = result['song_data']
