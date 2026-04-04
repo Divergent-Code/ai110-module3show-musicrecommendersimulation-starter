@@ -92,16 +92,13 @@ def recommend_songs(user_prefs, songs, k=5, mode="default"):
             item['current_score'] = item['base_score']
             item['current_reasons'] = item['reasons'].copy()
             
-            # THE PENALTY CHECK
+            # THE PENALTY CHECK (Silent version!)
             if item['song_data']['artist'] in seen_artists:
                 item['current_score'] -= 1.5
                 
-                # Check if we already added the reason so we don't spam the list
+                # We leave the text reason so the data is accurate, but no print statements!
                 if "Diversity Penalty (-1.5)" not in item['current_reasons']:
                     item['current_reasons'].append("Diversity Penalty (-1.5)")
-                    
-                    # ALERT FOR GRADING SCREENSHOTS
-                    print(f"   🚨 [SYSTEM ALERT] Penalizing duplicate artist: {item['song_data']['artist']} (Song: {item['song_data']['title']})")
 
         # Sort the pool based on the newly adjusted scores
         pool.sort(key=lambda x: x['current_score'], reverse=True)
