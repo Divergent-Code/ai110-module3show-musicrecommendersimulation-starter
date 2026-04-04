@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD036 -->
 # 🎵 Music Recommender Simulation
 
 ## Project Summary
@@ -17,17 +18,28 @@ Replace this paragraph with your own summary of what your version does.
 
 ## How The System Works
 
-Explain your design in plain language.
+**Project Summary**
 
-Some prompts to answer:
+In this project, I built a content-based music recommender system using a database of 45 real-world songs pulled from three distinct, human-curated playlists. Instead of relying on collaborative filtering (looking at what other users listen to), this system simulates how platforms match tracks based on specific audio features. It represents songs and user taste profiles as data, utilizes a custom mathematical scoring rule to rank the database, and helps evaluate how algorithmic weightings can create filter bubbles in real-world applications.
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
+---
 
-You can include a simple diagram or bullet list if helpful.
+**How The System Works**
+
+Real-world recommendation systems (like those on Spotify or YouTube) generally use a massive combination of collaborative filtering (user history) and content-based filtering (audio features). My version prioritizes **content-based filtering**. It completely ignores user history and instead acts as a direct matchmaker between a user's stated "vibe" and the mathematical audio features of the songs in the catalog.
+
+Here is a breakdown of the specific data and logic the system relies on:
+
+- **Song Features:** Each `Song` in the database utilizes four key attributes:
+  - Categorical: `genre` and `mood`
+  - Numerical: `energy` (0.0 to 1.0) and `danceability` (0.0 to 1.0)
+- **User Profile:** The `UserProfile` stores the listener's preferences to match against the songs: `favorite_genre`, `favorite_mood`, `target_energy`, and `target_danceability`.
+- **Scoring Logic:** The `Recommender` acts as a judge, evaluating each song out of a maximum of 5.0 points based on the following recipe:
+  - **+2.0 points** for an exact `genre` match.
+  - **+1.0 point** for an exact `mood` match.
+  - **Up to +1.0 point** for `energy` similarity (calculated as `1.0` minus the absolute difference between the user's target energy and the song's actual energy).
+  - **Up to +1.0 point** for `danceability` similarity (calculated exactly like energy).
+- **The Recommendation Process:** To choose the final recommendations, the system loops through every single song in the database, applies the scoring logic to calculate a Relevance Score, and then sorts the entire list from highest to lowest score to deliver the user's Top 5 tracks.
 
 ---
 
