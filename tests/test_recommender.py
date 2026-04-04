@@ -13,6 +13,8 @@ def make_small_songs_list():
             "valence": 0.9,
             "danceability": 0.8,
             "acousticness": 0.2,
+            "popularity": 80,
+            "decade": 2020
         },
         {
             "id": "2",
@@ -25,6 +27,8 @@ def make_small_songs_list():
             "valence": 0.6,
             "danceability": 0.5,
             "acousticness": 0.9,
+            "popularity": 45,
+            "decade": 2010
         },
     ]
 
@@ -33,7 +37,9 @@ def test_recommend_returns_songs_sorted_by_score():
         "favorite_genre": "pop",
         "favorite_mood": "happy",
         "target_energy": 0.8,
-        "target_danceability": 0.8
+        "target_danceability": 0.8,
+        "target_popularity": 80,
+        "target_decade": 2020
     }
     songs = make_small_songs_list()
     results = recommend_songs(user, songs, k=2)
@@ -49,7 +55,9 @@ def test_score_song_returns_score_and_reasons():
         "favorite_genre": "pop",
         "favorite_mood": "happy",
         "target_energy": 0.8,
-        "target_danceability": 0.8
+        "target_danceability": 0.8,
+        "target_popularity": 80,
+        "target_decade": 2020
     }
     song = make_small_songs_list()[0]
 
@@ -57,4 +65,4 @@ def test_score_song_returns_score_and_reasons():
     assert isinstance(score, float)
     assert isinstance(reasons, list)
     assert len(reasons) > 0
-    assert "Genre match (+2.0)" in reasons
+    assert "Genre match (+0.5)" in reasons
