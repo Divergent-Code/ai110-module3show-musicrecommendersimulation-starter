@@ -69,17 +69,46 @@ def score_song(user_prefs, song, mode="default"):
     return round(score, 2), reasons
 
 def recommend_songs(user_prefs, songs, k=5, mode="default"):
-    """Scores all songs and returns the top k ranked recommendations."""
-    scored_songs = []
+    """Scores all songs and dynamically ranks them with a diversity penalty."""
+    pool = []
     
+    # 1. Calculate the initial base score for every song in the database
     for song in songs:
         score, reasons = score_song(user_prefs, song, mode)
-        
-        scored_songs.append({
+        pool.append({
             "song_data": song,
-            "score": score,
+            "base_score": score,
             "reasons": reasons
         })
 
-    ranked_songs = sorted(scored_songs, key=lambda x: x['score'], reverse=True)
-    return ranked_songs[:k]
+    final_recommendations = []
+    seen_artists = set()
+
+    # 2. Greedily pick the top songs one by one until we hit 'k' amount
+    while len(final_recommendations) < k and pool:
+        
+        # Apply the diversity penalty to any artist we have already recommended
+        for item in pool:
+            item['current_score'] = item['base_score']
+            item['current_reasons'] = item['reasons'].copy()
+            
+            # THE PENALTY CHECK
+            if item['song_data']['artist'] in seen_artists:
+                item['current_score'] -= 1.5
+                item['current_reasons'].append("Diversity Penalty (-1.5)")
+
+        # Sort the pool based on the newly adjusted scores
+        pool.sort(key=lambda x: x['current_score'], reverse=True)
+
+        # Pop the highest scoring song off the top of the pool
+        best_match = pool.pop(0)
+        
+        # Add it to our final results and record the artist so they get penalized next time
+        final_recommendations.append({
+            "song_data": best_match['song_data'],
+            "score": round(best_match['current_score'], 2),
+            "reasons": best_match['current_reasons']
+        })
+        seen_artists.add(best_match['song_data']['artist'])
+
+    return final_recommendations
