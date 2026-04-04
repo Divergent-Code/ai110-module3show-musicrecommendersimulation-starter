@@ -1,46 +1,46 @@
-id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
-1,Poor Jackie,Man Man,indie rock,chaotic,0.8,115,0.6,0.55,0.2
-2,Date with the Night,Yeah Yeah Yeahs,indie rock,intense,0.95,135,0.5,0.45,0.05
-3,This Fire,Franz Ferdinand,indie rock,energetic,0.85,115,0.65,0.7,0.1
-4,Hate to Say I Told You So,The Hives,garage rock,intense,0.9,135,0.4,0.5,0.01
-5,Playgirl,Ladytron,synthpop,chill,0.7,120,0.5,0.75,0.15
-6,Back in You Head,Tegan and Sara,indie pop,upbeat,0.75,125,0.8,0.7,0.1
-7,Connection,Elastica,britpop,energetic,0.8,130,0.6,0.65,0.05
-8,The Chain,Fleetwood Mac,classic rock,intense,0.65,152,0.5,0.5,0.4
-9,Private Idaho,B-52s,new wave,happy,0.85,150,0.4,0.45,0.05
-10,Seether,Veruca Salt,alt rock,angsty,0.8,115,0.4,0.45,0.05
-11,Cherry Lips (Go Baby Go),Garbage,alt pop,happy,0.9,120,0.75,0.6,0.05
-12,Tokyo Calling,ATARASHII GAKKO!,j-pop,energetic,0.85,130,0.7,0.7,0.1
-13,Call Me,Blondie,new wave,energetic,0.8,142,0.65,0.6,0.05
-14,"jealousy, jealousy",Olivia Rodrigo,alt pop,angsty,0.7,164,0.4,0.65,0.15
-15,L.E.S. Artistes,Santigold,indie pop,cool,0.7,135,0.55,0.75,0.1
-16,Paralyzed,NF,hip hop,sad,0.6,85,0.3,0.5,0.4
-17,I Lost a Friend,FINNEAS,alt pop,sad,0.4,110,0.2,0.45,0.8
-18,love is embarassing,Olivia Rodrigo,pop rock,angsty,0.85,145,0.6,0.6,0.05
-19,Midnight Rain,Taylor Swift,synthpop,moody,0.5,115,0.3,0.65,0.4
-20,Constant Repeat,Charli xcx,synthpop,energetic,0.8,125,0.6,0.85,0.05
-21,California,Chappell Roan,indie pop,chill,0.55,105,0.4,0.55,0.6
-22,Untouched,The Veronicas,electro pop,intense,0.95,140,0.155,0.3,0.9
-23,Circles,Greta Svabo Bech,classical crossover,moody,0.4,120,0.15,0.3,0.9
-24,Zombie,Damned Anthem,cinematic rock,intense,0.75,80,0.2,0.35,0.1
-25,Unstead - Remix,X Ambassadors,alt rock,sad,0.65,110,0.3,0.55,0.25
-26,Escapism,RAYE,r&b,moody,0.75,96,0.45,0.75,0.15
-27,American Teenager,Ethel Cain,indie rock,nostalgic,0.65,120,0.4,0.5,0.45
-28,Don't Kill My Vibe,Sigrid,pop ,energetic,0.8,118,0.55,0.65,0.1
-29,you broke me first,Tate McRae,alt pop,angsty,0.5,124,0.35,0.6,0.6
-30,One of the Greats ,Florence + The Machine,indie pop,intense,0.7,110,0.4,0.45,0.6
-31,Exorcism,Em Beihold,dark pop,intense,0.75,110,0.4,0.65,0.15
-32,Devil is A Woman,Cloudy June,dark pop,intense,0.8,120,0.45,0.7,0.05
-33,Run Rabbit,ALT BLK ERA,nu metal,aggressive,0.9,140,0.3,0.5,0.01
-34,exes,Tate McRae,pop,moody,0.65,115,0.4,0.75,0.1
-35,CHARACTER DEVELOPMENT,PEGGY,alt pop,angsty,0.7,105,0.5,0.6,0.05
-36,Apologies,Three Days Grace,alt rock,angsty,0.85,150,0.35,0.4,0.05
-37,CODE MISTAKE,Corpse; Bring Me the Horizon,trap metal,aggressive,0.95,135,0.2,0.55,0.02
-38,BSTFU,THOT SQUAD,rap,aggressive,0.88,140,0.6,0.85,0.05
-39,Hand That Feeds,Halsey,industrial,intense,0.9,125,0.4,0.55,0.05
-40,Selfish - Winter Version,RIELL,dark pop,moody,0.6,95,0.3,0.5,0.4
-41,New Brain,Skye Riley,pop,energetic,0.75,120,0.5,0.65,0.1
-42,TGIF,GloRilla,rap,energetic,0.85,130,0.25,0.45,0.05
-43,Granite,Sleep Token,metal,intense,0.85,110,0.25,0.45,0.05
-44,Bad Dream Break In,Alter Boy,indie pop,moody,0.55,100,0.3,0.6,0.2
-45,HOT DEMON B!TCHES NEAR U!!!,CORPSE,trap metal,aggressive,0.92,120,0.3,0.75,0.05
+id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness,popularity,decade
+1,Poor Jackie,Man Man,indie rock,chaotic,0.80,115,0.60,0.55,0.20,40,2000
+2,Date with the Night,Yeah Yeah Yeahs,indie rock,intense,0.95,135,0.50,0.45,0.05,60,2000
+3,This Fire,Franz Ferdinand,indie rock,energetic,0.85,115,0.65,0.70,0.10,70,2000
+4,Hate to Say I Told You So,The Hives,garage rock,intense,0.90,135,0.40,0.50,0.01,65,2000
+5,Playgirl,Ladytron,synthpop,chill,0.70,120,0.50,0.75,0.15,50,2000
+6,Back in Your Head,Tegan and Sara,indie pop,upbeat,0.75,125,0.80,0.70,0.10,60,2000
+7,Connection,Elastica,britpop,energetic,0.80,130,0.60,0.65,0.05,55,1990
+8,The Chain,Fleetwood Mac,classic rock,intense,0.65,152,0.50,0.50,0.40,90,1970
+9,Private Idaho,B-52s,new wave,happy,0.85,150,0.90,0.60,0.10,70,1980
+10,Seether,Veruca Salt,alt rock,angsty,0.80,115,0.40,0.45,0.05,60,1990
+11,Cherry Lips (Go Baby Go),Garbage,alt pop,happy,0.90,120,0.75,0.60,0.05,65,2000
+12,Tokyo Calling,ATARASHII GAKKO!,j-pop,energetic,0.85,130,0.70,0.70,0.10,75,2020
+13,Call Me,Blondie,new wave,energetic,0.80,142,0.65,0.60,0.05,85,1980
+14,jealousy jealousy,Olivia Rodrigo,alt pop,angsty,0.70,164,0.40,0.65,0.15,95,2020
+15,L.E.S. Artistes,Santigold,indie pop,cool,0.70,135,0.55,0.75,0.10,65,2000
+16,Paralyzed,NF,hip hop,sad,0.60,85,0.30,0.50,0.40,80,2010
+17,I Lost a Friend,FINNEAS,alt pop,sad,0.40,110,0.20,0.45,0.80,75,2010
+18,love is embarrassing,Olivia Rodrigo,pop rock,angsty,0.85,145,0.60,0.60,0.05,90,2020
+19,Midnight Rain,Taylor Swift,synthpop,moody,0.50,115,0.30,0.65,0.40,95,2020
+20,Constant Repeat,Charli xcx,synthpop,energetic,0.80,125,0.60,0.85,0.05,75,2020
+21,California,Chappell Roan,indie pop,chill,0.55,105,0.40,0.55,0.60,85,2020
+22,Untouched,The Veronicas,electro pop,intense,0.95,140,0.70,0.60,0.02,75,2000
+23,Circles,Greta Svabo Bech,classical crossover,moody,0.40,120,0.15,0.30,0.90,40,2010
+24,Zombie,Damned Anthem,cinematic rock,intense,0.75,80,0.20,0.35,0.10,50,2020
+25,Unsteady - Remix,X Ambassadors,alt rock,sad,0.65,110,0.30,0.55,0.25,80,2010
+26,Escapism.,RAYE,r&b,moody,0.75,96,0.45,0.75,0.15,90,2020
+27,American Teenager,Ethel Cain,indie rock,nostalgic,0.65,120,0.40,0.50,0.45,70,2020
+28,Don't Kill My Vibe,Sigrid,pop,energetic,0.80,118,0.55,0.65,0.10,75,2010
+29,you broke me first,Tate McRae,alt pop,angsty,0.50,124,0.35,0.60,0.60,85,2020
+30,One of the Greats,Florence + The Machine,indie pop,intense,0.70,110,0.40,0.45,0.30,75,2010
+31,Exorcism,Em Beihold,dark pop,intense,0.75,110,0.40,0.65,0.15,70,2020
+32,Devil Is A Woman,Cloudy June,dark pop,intense,0.80,120,0.45,0.70,0.05,65,2020
+33,Run Rabbit,ALT BLK ERA,nu metal,aggressive,0.90,140,0.30,0.50,0.01,45,2020
+34,exes,Tate McRae,pop,moody,0.65,115,0.40,0.75,0.10,85,2020
+35,CHARACTER DEVELOPMENT,PEGGY,alt pop,angsty,0.70,105,0.50,0.60,0.05,60,2020
+36,Apologies,Three Days Grace,alt rock,angsty,0.85,150,0.35,0.40,0.05,70,2000
+37,CODE MISTAKE,CORPSE,trap metal,aggressive,0.95,135,0.20,0.55,0.02,80,2020
+38,BSTFU,THOT SQUAD,rap,aggressive,0.88,140,0.60,0.85,0.05,50,2020
+39,Hand That Feeds - From the Film Ballerina,Halsey,industrial rock,intense,0.90,125,0.40,0.55,0.05,75,2020
+40,Selfish - Winter Version,RIELL,dark pop,moody,0.60,95,0.30,0.50,0.40,55,2020
+41,New Brain,Skye Riley,pop,energetic,0.75,120,0.50,0.65,0.10,50,2020
+42,TGIF,GloRilla,rap,energetic,0.85,130,0.70,0.90,0.05,85,2020
+43,Granite,Sleep Token,metal,intense,0.85,110,0.25,0.45,0.05,80,2020
+44,Bad Dream Break In,Alter Boy,indie pop,moody,0.55,100,0.30,0.60,0.20,45,2020
+45,HOT DEMON B!TCHES NEAR U ! ! !,CORPSE,trap metal,aggressive,0.92,120,0.30,0.75,0.05,85,2020
