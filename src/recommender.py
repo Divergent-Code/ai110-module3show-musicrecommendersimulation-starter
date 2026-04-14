@@ -82,8 +82,8 @@ class UserProfile(TypedDict):
     """Schema for user preference profile.
     
     DEV NOTE: target_energy and target_danceability use 0.0-1.0 scale to
-    match the Spotify audio features standard used in the dataset.
-    target_popularity uses 0-100 scale (Spotify's popularity metric).
+    match the audio features standard used in the dataset.
+    target_popularity uses 0-100 scale (the platform's popularity metric).
     target_decade is the preferred release decade (e.g., 2020, 2000).
     """
     favorite_genre: str

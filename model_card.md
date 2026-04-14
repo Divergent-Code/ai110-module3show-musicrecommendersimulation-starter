@@ -37,7 +37,7 @@ I tested the system using three distinct user profiles: Rob (Indie Rock), Azalea
 
 ## 8. Ideas for Improvement
 
-1. **Local Data Processing:** Since Spotify deprecated public access to its `audio-features` endpoint, future iterations should integrate a local audio analysis library (like `librosa`) to calculate BPM and energy from raw MP3 files natively, removing reliance on closed third-party APIs.
+1. **Local Data Processing:** Since public access to major `audio-features` endpoints was deprecated, future iterations should integrate a local audio analysis library (like `librosa`) to calculate BPM and energy from raw MP3 files natively, removing reliance on closed third-party APIs.
 2. Add a "Group Session" feature that averages the preferences of multiple users to recommend songs they would all enjoy.
 3. Allow users to input a list of multiple favorite genres instead of forcing them to pick just one.
 
@@ -47,4 +47,4 @@ I tested the system using three distinct user profiles: Rob (Indie Rock), Azalea
 
 My biggest learning moment during this project was realizing how easily a developer can accidentally trap a user in a "filter bubble." Just by assigning too many points to a text category like `genre`, the algorithm becomes blinded to other great matches. Building the diversity penalty taught me that "fairness" in algorithms requires active intervention—the math naturally wanted to spam the same artist until I wrote code to explicitly stop it.
 
-Using AI tools was incredibly helpful for quickly refactoring the code, adding Python `TypedDict` for type hinting, and expanding the test suite to cover edge cases. However, the most jarring lesson came from the real world: I attempted to connect this algorithm to the Spotify Web API, only to discover Spotify locked down their audio-features math behind an enterprise wall in November 2024. It was a stark reminder that even the best code in the world is useless if you don't control the underlying data.
+Using AI tools was incredibly helpful for quickly refactoring the code, adding Python `TypedDict` for type hinting, and expanding the test suite to cover edge cases. However, the most jarring lesson came from the real world: I attempted to connect this algorithm to a major streaming platform's Web API, only to discover they locked down their audio-features math behind an enterprise wall in November 2024. It was a stark reminder that even the best code in the world is useless if you don't control the underlying data.

@@ -36,7 +36,7 @@ Here is a breakdown of the specific data and logic the system relies on:
    .venv\Scripts\activate         # Windows
    ```
 
-2. Install dependencies (now includes tabulate for UI formatting, and spotipy / python-dotenv for API testing):
+2. Install dependencies (now includes tabulate for UI formatting):
 
    ```bash
    pip install -r requirements.txt
@@ -65,8 +65,8 @@ pytest
 - **The Diversity Penalty:** Intentionally loaded the `songs.csv` database with multiple highly-rated tracks by Tate McRae, Taylor Swift, and Olivia Rodrigo to see if the math would recommend them all in a row.  
   **Result:** The -1.5 fairness penalty worked flawlessly, throwing "System Alerts" in the backend and successfully banning duplicate artists from the final output.
 
-- **Attempted Spotify API Integration:** I attempted to upgrade the simulation into a real-world tool by connecting it to the Spotify Web API to harvest live audio features and automatically generate playlists.  
-  **Result:** The integration was unsuccessful due to third-party data restrictions. On November 27, 2024, Spotify officially deprecated the `audio-features` and `audio-analysis` endpoints. They locked this mathematical data behind enterprise walls, resulting in a HTTP 403 Forbidden error when trying to fetch the exact energy and danceability scores needed for my algorithm.
+- **Attempted External API Integration:** I attempted to upgrade the simulation into a real-world tool by connecting it to a major streaming platform's Web API to harvest live audio features and automatically generate playlists.  
+  **Result:** The integration was unsuccessful due to third-party data restrictions. On November 27, 2024, the platform officially deprecated their `audio-features` and `audio-analysis` endpoints. They locked this mathematical data behind enterprise walls, resulting in a HTTP 403 Forbidden error when trying to fetch the exact energy and danceability scores needed for my algorithm.
 
 ---
 
@@ -76,7 +76,7 @@ pytest
 (Place screenshot of terminal output showing the beautiful ASCII tables and the 🚨 System Alerts here)  
 `[Insert Screenshot Here]`
 
-**The Spotify 403 Deprecation Error:**  
+**The API 403 Deprecation Error:**  
 (Place screenshot of the terminal throwing the 403 Forbidden error here)  
 `[Insert Screenshot Here]`
 
@@ -84,6 +84,6 @@ pytest
 
 ## Limitations and Risks
 
-- **Third-Party Reliance:** As proven by the Spotify API experiment, relying on closed-source APIs for foundational math (like danceability) is highly risky. If a company deprecates an endpoint, the entire recommender breaks.
+- **Third-Party Reliance:** As proven by the API experiment, relying on closed-source APIs for foundational math (like danceability) is highly risky. If a company deprecates an endpoint, the entire recommender breaks.
 - **Small Catalog:** It only works on a curated 65-song database.
 - **Lack of Lyrical Context:** The algorithm does not understand lyrics or language, relying entirely on assigned numeric values.
